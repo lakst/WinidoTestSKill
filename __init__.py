@@ -21,6 +21,7 @@ class WinidoTestSkill(MycroftSkill):
             self.play=true
             while play:
                 self.speak_dialog("question", None, true)
+                play = false
         except:
             self.speak_dialog("error")
 
