@@ -11,7 +11,7 @@ class WinidoTestSkill(MycroftSkill):
         super(WinidoTestSkill, self).__init__(name="WinidoTestSkill")
 
     def initialize(self):
-        start_intent = IntentBuilder("StartIntent").require("PlayKeyWord").adds_context('playing').build()
+        start_intent = IntentBuilder("StartIntent").require("PlayKeyWord").build()
         self.register_intent(start_intent, self.handle_start_intent)
 
     def handle_start_intent(self, message):
