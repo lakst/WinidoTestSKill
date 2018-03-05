@@ -15,15 +15,12 @@ class WinidoTestSkill(MycroftSkill):
         self.register_intent(start_intent, self.handle_start_intent)
 
     def handle_start_intent(self, message):
-        try:
-            self.speak_dialog("response.dialog", None, true)
-            self.count = 0
-            self.play=true
-            while play:
-                self.speak_dialog("question", None, true)
-                play = false
-        except:
-            self.speak_dialog("error")
+        self.speak_dialog("response.dialog", None, true)
+        self.count = 0
+        self.play=true
+        while play:
+           self.speak_dialog("question", None, true)
+           play = false
 
     @intent_handler(IntentBuilder('CorrectAnswerIntent').require("answer1KeyWord").build())
     def answer_intent(self, message):
