@@ -21,11 +21,11 @@ class WinidoTestSkill(MycroftSkill):
             self.speak_dialog("question", None, expect_response=True)
             play = False
 
-    @intent_handler(IntentBuilder('CorrectAnswerIntent').require("answer1KeyWord").build())
+    @intent_handler(IntentBuilder('CorrectAnswerIntent').require("answer1KeyWord"))
     def answer_intent(self, message):
         self.speak_dialog("CorrectAnswer")
 
-    @intent_handler(IntentBuilder('WrongAnswerIntent').build())
+    @intent_handler(IntentBuilder('WrongAnswerIntent'))
     def answer_intent(self, message):
         self.speak_dialog("WrongAnswer")
 
