@@ -15,7 +15,7 @@ class WinidoTestSkill(MycroftSkill):
         self.register_intent(start_intent, self.handle_start_intent)
 
     def handle_start_intent(self, message):
-        self.speak_dialog("response.dialog", None, expect_response=True)
+        self.speak_dialog("response", None, expect_response=True)
         self.count = 0
         self.play=true
         while play:
