@@ -1,5 +1,5 @@
 from adapt.intent import IntentBuilder
-from mycroft.skills.core import MycroftSkill,intent_handler
+from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import getLogger
 
 __author__ = 'winido'
@@ -16,11 +16,10 @@ class WinidoTestSkill(MycroftSkill):
 
     def handle_start_intent(self, message):
         self.speak_dialog("response", None, expect_response=True)
-        self.count = 0
-        self.play=true
+        play = True
         while play:
-           self.speak_dialog("question", None, expect_response=True)
-           play = false
+            self.speak_dialog("question", None, expect_response=True)
+            play = False
 
     @intent_handler(IntentBuilder('CorrectAnswerIntent').require("answer1KeyWord").build())
     def answer_intent(self, message):
@@ -29,6 +28,7 @@ class WinidoTestSkill(MycroftSkill):
     @intent_handler(IntentBuilder('WrongAnswerIntent').build())
     def answer_intent(self, message):
         self.speak_dialog("WrongAnswer")
+
 
 def create_skill():
     return WinidoTestSkill()
