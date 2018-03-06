@@ -21,7 +21,7 @@ class WinidoTestSkill(MycroftSkill):
 
     @intent_handler(IntentBuilder('AnswerIntent').require("answer1KeyWord"))
     def handle_answer_intent(self, message):
-        if message.data["answer1KeyWord"] == "नरेंद्र मोदी":
+        if message.data["answer1KeyWord"]=="नरेंद्र मोदी":
             self.speak_dialog("CorrectAnswer")
         else:
             self.speak_dialog("WrongAnswer")
